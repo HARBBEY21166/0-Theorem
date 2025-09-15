@@ -35,6 +35,12 @@
       "description": "Portrait of a person in a creative setting",
       "imageUrl": "https://picsum.photos/seed/t3/100/100",
       "imageHint": "creative person"
+    },
+    {
+      "id": "about-hero",
+      "description": "Professional portrait of Abiodun Abbey Aina",
+      "imageUrl": "https://picsum.photos/seed/abiodun/400/400",
+      "imageHint": "professional man portrait"
     }
   ]
 }

@@ -113,6 +113,23 @@
     pointer-events: none;
     z-index: -1;
   }
+  .about-page-gradient {
+    position: relative;
+    overflow: hidden;
+  }
+  .about-page-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+      radial-gradient(circle at 20% 30%, hsla(229, 84%, 60%, 0.05), transparent 30%),
+      radial-gradient(circle at 80% 70%, hsla(325, 93%, 55%, 0.05), transparent 30%);
+    pointer-events: none;
+    z-index: -1;
+  }
 }
 
 @keyframes slow-flow {
