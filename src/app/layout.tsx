@@ -2,6 +2,8 @@ import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 import { cn } from '@/lib/utils';
+import Header from '@/components/layout/header';
+import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
   title: 'Zero Theorem',
@@ -21,7 +23,9 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@700&display=swap" rel="stylesheet" />
       </head>
       <body className={cn("font-body antialiased")}>
-        {children}
+        <Header />
+        <main className="flex-grow">{children}</main>
+        <Footer />
         <Toaster />
       </body>
     </html>

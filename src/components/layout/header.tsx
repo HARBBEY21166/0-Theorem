@@ -25,16 +25,16 @@ export default function Header() {
         <div className="hidden md:flex flex-1 items-center justify-end space-x-2">
           <nav className="flex items-center gap-2">
             <Button variant="ghost" asChild>
-              <Link href="#services">Services</Link>
+              <Link href="/services">Services</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link href="#portfolio">Work</Link>
+              <Link href="/#portfolio">Work</Link>
             </Button>
             <Button variant="ghost" asChild>
-              <Link href="#process">Process</Link>
+              <Link href="/#process">Process</Link>
             </Button>
             <Button asChild>
-              <Link href="#cta">Start a Project</Link>
+              <Link href="/#cta">Start a Project</Link>
             </Button>
           </nav>
         </div>
