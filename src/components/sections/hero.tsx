@@ -1,11 +1,12 @@
+
 "use client";
 
 import { useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import BinaryParticleSystem from "@/components/interactive/binary-particle-system";
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
+import Spline from '@splinetool/react-spline/next';
 
 export default function HeroSection() {
   const headlineRef = useRef(null);
@@ -21,7 +22,11 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-center overflow-hidden">
-      <BinaryParticleSystem />
+      <div className="absolute inset-0 z-0">
+        <Spline
+            scene="https://prod.spline.design/TWERz0weQDv7pm3S/scene.splinecode" 
+        />
+      </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
           <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4">
