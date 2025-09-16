@@ -6,7 +6,12 @@ import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
-import Spline from '@splinetool/react-spline/next';
+import dynamic from 'next/dynamic';
+
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
+  ssr: false,
+});
+
 
 export default function HeroSection() {
   const headlineRef = useRef(null);
