@@ -1,7 +1,23 @@
+
+"use client"
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu } from 'lucide-react';
+import { useState } from 'react';
+
+const navLinks = [
+    { href: "/services", label: "Services" },
+    { href: "/portfolio", label: "Work" },
+    { href: "/pricing", label: "Pricing" },
+    { href: "/about", label: "About" },
+    { href: "/contact", label: "Contact" },
+]
 
 export default function Header() {
+  const [isSheetOpen, setIsSheetOpen] = useState(false);
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-14 items-center">
@@ -22,29 +38,49 @@ export default function Header() {
             <span className="font-bold font-headline">Zero Theorem</span>
           </Link>
         </div>
-        <div className="hidden md:flex flex-1 items-center justify-end space-x-2">
-          <nav className="flex items-center gap-2">
-            <Button variant="ghost" asChild>
-              <Link href="/services">Services</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="/portfolio">Work</Link>
-            </Button>
-             <Button variant="ghost" asChild>
-              <Link href="/pricing">Pricing</Link>
-            </Button>
-            <Button variant="ghost" asChild>
-              <Link href="/about">About</Link>
-            </Button>
-             <Button variant="ghost" asChild>
-              <Link href="/contact">Contact</Link>
-            </Button>
+        
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-2">
+            {navLinks.map(link => (
+                 <Button variant="ghost" asChild key={link.href}>
+                    <Link href={link.href}>{link.label}</Link>
+                 </Button>
+            ))}
             <Button asChild>
-              <Link href="/contact">Start a Project</Link>
+                <Link href="/contact">Start a Project</Link>
             </Button>
-          </nav>
+        </nav>
+
+        {/* Mobile Navigation */}
+        <div className="md:hidden">
+            <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
+                <SheetTrigger asChild>
+                    <Button variant="ghost" size="icon">
+                        <Menu />
+                        <span className="sr-only">Open menu</span>
+                    </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+                    <nav className="flex flex-col gap-4 mt-8">
+                        {navLinks.map(link => (
+                             <Link
+                                key={link.href}
+                                href={link.href}
+                                onClick={() => setIsSheetOpen(false)}
+                                className="block px-2 py-1 text-lg"
+                             >
+                                {link.label}
+                            </Link>
+                        ))}
+                         <Button asChild className="mt-4">
+                            <Link href="/contact" onClick={() => setIsSheetOpen(false)}>Start a Project</Link>
+                        </Button>
+                    </nav>
+                </SheetContent>
+            </Sheet>
         </div>
       </div>
     </header>
   );
 }
+
