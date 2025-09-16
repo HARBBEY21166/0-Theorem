@@ -30,6 +30,12 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    if (isServer) {
+      config.externals.push('@splinetool/react-spline');
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
