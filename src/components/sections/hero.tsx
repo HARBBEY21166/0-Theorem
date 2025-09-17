@@ -24,7 +24,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section id="hero" className="relative py-20 sm:py-32 flex items-center justify-center text-center h-screen min-h-[700px]">
+    <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
        <div className="absolute inset-0 z-0">
          <Suspense fallback={<div className="w-full h-full bg-background" />}>
           <Spline
