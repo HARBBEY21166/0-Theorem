@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const Spline = dynamic(() => import('@splinetool/react-spline/next'), {
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
   ssr: false,
 });
 
