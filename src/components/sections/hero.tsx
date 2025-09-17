@@ -1,16 +1,11 @@
 
 "use client";
 
-import { useRef, useEffect, Suspense } from 'react';
+import { useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
-
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-});
 
 export default function HeroSection() {
   const headlineRef = useRef(null);
@@ -26,12 +21,9 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative h-screen min-h-[600px] w-full flex items-center justify-center text-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <Suspense fallback={<div className="w-full h-full bg-background" />}>
-            <Spline
-                scene="https://prod.spline.design/TWERz0weQDv7pm3S/scene.splinecode" 
-            />
-        </Suspense>
+      <div className="absolute inset-0 z-0 bg-background">
+        {/* Placeholder for a background element */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-secondary/5 opacity-50"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
