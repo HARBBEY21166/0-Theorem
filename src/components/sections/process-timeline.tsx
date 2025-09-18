@@ -5,8 +5,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-gsap.registerPlugin(ScrollTrigger);
-
 type Step = {
   name: string;
   icon: React.ReactNode;
@@ -17,6 +15,8 @@ export default function ProcessTimeline({ steps }: { steps: Step[] }) {
   const timelineRef = useRef(null);
   
   useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    
     const mm = gsap.matchMedia();
 
     mm.add("(min-width: 768px)", () => {
@@ -59,7 +59,6 @@ export default function ProcessTimeline({ steps }: { steps: Step[] }) {
             start: 'top center',
             end: 'bottom center',
             toggleClass: { targets: dot, className: "active" },
-            scrub: true,
           })
         });
     });
@@ -67,10 +66,11 @@ export default function ProcessTimeline({ steps }: { steps: Step[] }) {
     mm.add("(max-width: 767px)", () => {
         const items = gsap.utils.toArray('.timeline-item-mobile');
          gsap.fromTo(items,
-            { opacity: 0 },
+            { opacity: 0, y: 30 },
             {
               opacity: 1,
-              stagger: 0.5,
+              y: 0,
+              stagger: 0.3,
               ease: 'power3.out',
               scrollTrigger: {
                 trigger: timelineRef.current,
@@ -90,7 +90,7 @@ export default function ProcessTimeline({ steps }: { steps: Step[] }) {
         <div className="timeline-line-desktop absolute left-1/2 -translate-x-1/2 top-0 h-full w-0.5 bg-border/40" />
         {steps.map((step, index) => (
           <div key={step.name} className="timeline-item-desktop relative my-16">
-            <div className="timeline-dot absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 bg-background rounded-full border-2 border-border transition-colors duration-300" />
+            <div className="timeline-dot absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-4 h-4 bg-background rounded-full border-2 border-border transition-all duration-300" />
             <div className={`timeline-card w-[calc(50%-2rem)] ${index % 2 === 0 ? 'mr-auto' : 'ml-auto'}`}>
               <Card className="bg-card/80 backdrop-blur-sm">
                 <CardHeader className="flex-row items-center gap-4">
@@ -126,6 +126,7 @@ export default function ProcessTimeline({ steps }: { steps: Step[] }) {
         .timeline-dot.active {
           background-color: hsl(var(--primary));
           border-color: hsl(var(--primary));
+          box-shadow: 0 0 0 4px hsla(var(--primary), 0.3);
         }
       `}</style>
     </div>
