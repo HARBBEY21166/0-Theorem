@@ -1,20 +1,21 @@
-
 "use client";
 
-import { useRef, useEffect, Suspense } from 'react';
+import { useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
-import dynamic from 'next/dynamic';
 
-const Spline = dynamic(
-  () => import('@splinetool/react-spline'),
-  {
-    ssr: false,
-    loading: () => <div className="w-full h-full bg-background" />,
+// @ts-ignore
+import type { SplineViewer } from '@splinetool/viewer';
+
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'spline-viewer': React.DetailedHTMLProps<React.HTMLAttributes<SplineViewer>, SplineViewer>;
+    }
   }
-);
+}
 
 export default function HeroSection() {
   const headlineRef = useRef(null);
@@ -31,11 +32,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
        <div className="absolute inset-0 z-0">
-        <Suspense fallback={<div className="w-full h-full bg-background" />}>
-          <Spline
-              scene="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"
-          />
-        </Suspense>
+          <spline-viewer hint url="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"></spline-viewer>
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
