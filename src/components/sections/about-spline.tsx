@@ -4,9 +4,13 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-});
+const Spline = dynamic(
+  () => import('@splinetool/react-spline'),
+  {
+    ssr: false,
+    loading: () => <div className="w-full h-full bg-card/50 rounded-lg animate-pulse" />,
+  }
+);
 
 export default function AboutSpline() {
   return (

@@ -8,9 +8,13 @@ import { gsap } from 'gsap';
 import Link from 'next/link';
 import dynamic from 'next/dynamic';
 
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-});
+const Spline = dynamic(
+  () => import('@splinetool/react-spline'),
+  {
+    ssr: false,
+    loading: () => <div className="w-full h-full bg-background" />,
+  }
+);
 
 export default function HeroSection() {
   const headlineRef = useRef(null);
@@ -27,7 +31,7 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
        <div className="absolute inset-0 z-0">
-         <Suspense fallback={<div className="w-full h-full bg-background" />}>
+        <Suspense fallback={<div className="w-full h-full bg-background" />}>
           <Spline
               scene="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"
           />
