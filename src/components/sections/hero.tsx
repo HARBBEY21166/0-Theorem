@@ -55,7 +55,7 @@ export default function HeroSection() {
           <Button size="lg" variant="outline" asChild className="group relative overflow-hidden border-2">
              <Link href="#cta">
               Get a Quote
-              <span className="absolute inset-0 border-2 border-accent scale-125 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 rounded-md" />
+              <span className="absolute inset-0 border-2 border-primary scale-125 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 rounded-md" />
             </Link>
           </Button>
         </div>
