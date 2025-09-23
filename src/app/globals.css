@@ -16,8 +16,8 @@
     --secondary-foreground: 240 21% 6%;
     --muted: 240 16% 15%;
     --muted-foreground: 210 20% 70%;
-    --accent: 325 93% 55%; /* #F72585 */
-    --accent-foreground: 210 20% 96%;
+    --accent: 193 86% 62%; /* #4CC9F0 */
+    --accent-foreground: 240 21% 6%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 16% 20%;
@@ -52,8 +52,8 @@
     --secondary-foreground: 240 21% 6%;
     --muted: 240 16% 15%;
     --muted-foreground: 210 20% 70%;
-    --accent: 325 93% 55%; /* #F72585 */
-    --accent-foreground: 210 20% 96%;
+    --accent: 193 86% 62%; /* #4CC9F0 */
+    --accent-foreground: 240 21% 6%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 16% 20%;
@@ -126,7 +126,7 @@
     bottom: 0;
     background-image:
       radial-gradient(circle at 20% 30%, hsla(229, 84%, 60%, 0.05), transparent 30%),
-      radial-gradient(circle at 80% 70%, hsla(325, 93%, 55%, 0.05), transparent 30%);
+      radial-gradient(circle at 80% 70%, hsla(193, 86%, 62%, 0.05), transparent 30%);
     pointer-events: none;
     z-index: -1;
   }
