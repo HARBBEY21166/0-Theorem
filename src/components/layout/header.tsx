@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
+import Image from 'next/image';
 
 const navLinks = [
     { href: "/services", label: "Services" },
@@ -23,18 +24,7 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-auto flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-6 w-6 text-primary"
-            >
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-            </svg>
+            <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={24} height={24} />
             <span className="font-bold font-headline">Zero Theorem</span>
           </Link>
         </div>
@@ -83,4 +73,3 @@ export default function Header() {
     </header>
   );
 }
-
