@@ -3,44 +3,80 @@
     {
       "id": "portfolio-1",
       "description": "Abstract visualization of data network",
-      "imageUrl": "https://picsum.photos/seed/p1/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1573804432509-189cac6f9366?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMG5ldHdvcmt8ZW58MHx8fHwxNzU4Njg3MTAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "abstract network"
     },
     {
       "id": "portfolio-2",
       "description": "Modern web application dashboard",
-      "imageUrl": "https://picsum.photos/seed/p2/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1669023414166-a4cc7c0fe1f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWIlMjBkYXNoYm9hcmR8ZW58MHx8fHwxNzU4ODA5NDUyfDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "web dashboard"
     },
     {
       "id": "portfolio-3",
       "description": "Futuristic mobile app interface",
-      "imageUrl": "https://picsum.photos/seed/p3/800/600",
+      "imageUrl": "https://images.unsplash.com/photo-1758786977080-a5e60a3f843c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2JpbGUlMjBpbnRlcmZhY2V8ZW58MHx8fHwxNzU4ODEwMzU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "mobile interface"
     },
     {
       "id": "testimonial-1",
       "description": "Portrait of a smiling professional woman",
-      "imageUrl": "https://picsum.photos/seed/t1/100/100",
+      "imageUrl": "https://images.unsplash.com/photo-1573165850883-9b0e18c44bd2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxwcm9mZXNzaW9uYWwlMjB3b21hbnxlbnwwfHx8fDE3NTg3OTE1MzR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional woman"
     },
     {
       "id": "testimonial-2",
       "description": "Portrait of a smiling professional man",
-      "imageUrl": "https://picsum.photos/seed/t2/100/100",
+      "imageUrl": "https://images.unsplash.com/flagged/photo-1553642618-de0381320ff3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxwcm9mZXNzaW9uYWwlMjBtYW58ZW58MHx8fHwxNzU4Nzk4MTE4fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional man"
     },
     {
       "id": "testimonial-3",
       "description": "Portrait of a person in a creative setting",
-      "imageUrl": "https://picsum.photos/seed/t3/100/100",
+      "imageUrl": "https://images.unsplash.com/photo-1611244419377-b0a760c19719?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjcmVhdGl2ZSUyMHBlcnNvbnxlbnwwfHx8fDE3NTg3MjA0MDd8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "creative person"
     },
     {
       "id": "about-hero",
       "description": "Professional portrait of Abiodun Abbey Aina",
-      "imageUrl": "https://picsum.photos/seed/abiodun/400/400",
+      "imageUrl": "https://images.unsplash.com/photo-1672685667592-0392f458f46f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBtYW4lMjBwb3J0cmFpdHxlbnwwfHx8fDE3NTg4MTAzNTR8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "professional man portrait"
+    },
+    {
+      "id": "blog-post-1",
+      "description": "Abstract visualization of code",
+      "imageUrl": "https://images.unsplash.com/photo-1565106430482-8f6e74349ca1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGNvZGV8ZW58MHx8fHwxNzU4ODA5MzI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract code"
+    },
+    {
+      "id": "blog-post-2",
+      "description": "Grid of UI components for a design system",
+      "imageUrl": "https://images.unsplash.com/photo-1676263813382-bb5ba4b63f91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8ZGVzaWduJTIwc3lzdGVtJTIwZ3JpZHxlbnwwfHx8fDE3NTg4MTAzNTV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "design system grid"
+    },
+    {
+      "id": "blog-post-3",
+      "description": "Whiteboard with strategic flowchart",
+      "imageUrl": "https://images.unsplash.com/photo-1758691736508-a85d1f7d5a77?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxzdHJhdGVneSUyMHdoaXRlYm9hcmR8ZW58MHx8fHwxNzU4ODEwMzU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "strategy whiteboard"
+    },
+    {
+      "id": "blog-post-4",
+      "description": "Smooth curves representing animation paths",
+      "imageUrl": "https://images.unsplash.com/photo-1677157371140-6962e1e2195c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw2fHxzbW9vdGglMjBhbmltYXRpb24lMjBjdXJ2ZXN8ZW58MHx8fHwxNzU4ODEwMzU4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "smooth animation curves"
+    },
+    {
+      "id": "blog-post-5",
+      "description": "A vibrant color palette arranged neatly",
+      "imageUrl": "https://images.unsplash.com/photo-1581079949099-ea95c980d186?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw3fHxjb2xvciUyMHBhbGV0dGV8ZW58MHx8fHwxNzU4NzAzODU1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "color palette"
+    },
+    {
+      "id": "blog-post-6",
+      "description": "Diagram of server and client architecture",
+      "imageUrl": "https://images.unsplash.com/photo-1563884705074-7c8b15f16295?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxMHx8c2VydmVyJTIwYXJjaGl0ZWN0dXJlJTIwZGlhZ3JhbXxlbnwwfHx8fDE3NTg4MTAzNTZ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "server architecture diagram"
     }
   ]
 }
