@@ -7,6 +7,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
+import { ThemeToggle } from '@/components/layout/theme-toggle';
 
 const navLinks = [
     { href: "/services", label: "Services" },
@@ -24,7 +25,7 @@ export default function Header() {
       <div className="container flex h-14 items-center">
         <div className="mr-auto flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
-            <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={24} height={24} />
+            <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={38} height={38} />
             <span className="font-bold font-headline">Zero Theorem</span>
           </Link>
         </div>
@@ -36,13 +37,15 @@ export default function Header() {
                     <Link href={link.href}>{link.label}</Link>
                  </Button>
             ))}
+            <ThemeToggle />
             <Button asChild>
                 <Link href="/contact">Start a Project</Link>
             </Button>
         </nav>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center">
+            <ThemeToggle />
             <Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
                 <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
