@@ -1,4 +1,6 @@
 
+"use client";
+
 import AboutHero from '@/components/sections/about-hero';
 import Philosophy from '@/components/sections/philosophy';
 import Journey from '@/components/sections/journey';
