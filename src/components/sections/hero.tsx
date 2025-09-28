@@ -41,7 +41,7 @@ export default function HeroSection() {
           </h1>
         </div>
         <div className="overflow-hidden">
-          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-foreground/80 ">
+          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-white">
             Zero Theorem is where precise software engineering meets visionary graphic design to build foundational solutions.
           </p>
         </div>
