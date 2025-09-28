@@ -196,8 +196,8 @@ export default function PortfolioGallery() {
                                 <Image
                                     src={selectedProject.imageUrl}
                                     alt={selectedProject.title}
-                                    layout="fill"
-                                    objectFit="cover"
+                                    fill
+                                    className="object-cover"
                                 />
                             </div>
                             <div className="p-8 md:p-12 overflow-y-auto">

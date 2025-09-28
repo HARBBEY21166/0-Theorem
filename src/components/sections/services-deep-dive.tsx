@@ -64,7 +64,7 @@ const AnimatedCode = () => (
 
 const AnimatedDesign = () => (
     <div className="relative w-full h-full">
-        <Image src="/design-mockup.svg" alt="UI/UX Design Mockup" layout="fill" objectFit="contain" />
+        <Image src="/design-mockup.svg" alt="UI/UX Design Mockup" fill className="object-contain" />
     </div>
 );
 

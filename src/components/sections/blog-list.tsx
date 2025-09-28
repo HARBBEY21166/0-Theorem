@@ -89,10 +89,9 @@ const PostCard = ({ post }: { post: typeof posts[0] }) => {
                         <Image
                             src={imageData.imageUrl}
                             alt={post.title}
-                            layout="fill"
-                            objectFit="cover"
+                            fill
+                            className="object-cover transform transition-transform duration-500 group-hover:scale-105"
                             data-ai-hint={post.imageHint}
-                            className="transform transition-transform duration-500 group-hover:scale-105"
                         />
                     </div>
                 </Link>
