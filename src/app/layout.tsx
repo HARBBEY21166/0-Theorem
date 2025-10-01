@@ -20,10 +20,10 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time for demonstration, remove in production
+    // Simulate loading time for demonstration
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 5000); // Adjust time as needed
+    }, 5000); // 5 seconds
 
     return () => clearTimeout(timer);
   }, []);
