@@ -34,6 +34,13 @@ export default function HeroSection() {
     checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
 
+    if (window.innerWidth >= 768) {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = 'https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js';
+      document.head.appendChild(script);
+    }
+    
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.fromTo(headlineRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
       .fromTo(subheadlineRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.8')
