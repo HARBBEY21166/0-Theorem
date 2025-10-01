@@ -5,10 +5,12 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
 import { usePathname, useRouter } from 'next/navigation';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { cn } from '@/lib/utils';
 
 const navLinks = [
     { href: "/services", label: "Services" },
@@ -21,16 +23,22 @@ const navLinks = [
 
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const [isPending, startTransition] = useTransition();
+  const [isReloading, setIsReloading] = useState(false);
   const pathname = usePathname();
   const router = useRouter();
 
   const handleLinkClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
     if (href === pathname) {
       e.preventDefault();
-      router.refresh();
-      if (isSheetOpen) {
-        setIsSheetOpen(false);
-      }
+      setIsReloading(true);
+      startTransition(async () => {
+        await router.refresh();
+        setIsReloading(false);
+        if (isSheetOpen) {
+          setIsSheetOpen(false);
+        }
+      });
     } else {
       if (isSheetOpen) {
         setIsSheetOpen(false);
@@ -38,9 +46,22 @@ export default function Header() {
     }
   };
 
+  const isActuallyLoading = isPending || isReloading;
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
+      {isActuallyLoading && (
+        <div className="flex justify-center items-center h-screen w-screen fixed top-0 left-0 bg-background z-[999]">
+            <div className="w-64 h-64">
+                <DotLottieReact
+                src="https://lottie.host/f0e7431f-49f5-428c-8d8a-a625216ebbe7/W3UqdgLOaR.lottie"
+                loop
+                autoplay
+                />
+            </div>
+        </div>
+      )}
+      <div className={cn("container flex h-14 items-center", isActuallyLoading && "opacity-0")}>
         <div className="mr-auto flex">
           <Link href="/" className="mr-6 flex items-center space-x-2">
             <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={38} height={38} />
