@@ -29,20 +29,20 @@ export default function Header() {
   const router = useRouter();
 
   const handleLinkClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
-    if (href === pathname) {
-      e.preventDefault();
-      setIsReloading(true);
-      startTransition(async () => {
-        await router.refresh();
-        setIsReloading(false);
-        if (isSheetOpen) {
-          setIsSheetOpen(false);
-        }
-      });
-    } else {
-      if (isSheetOpen) {
-        setIsSheetOpen(false);
+    e.preventDefault();
+    setIsReloading(true);
+    setTimeout(() => {
+      if (href === pathname) {
+          router.refresh();
+      } else {
+          router.push(href);
       }
+      // A small delay to allow navigation/refresh to start before hiding loader
+      setTimeout(() => setIsReloading(false), 100);
+    }, 8000);
+
+    if (isSheetOpen) {
+      setIsSheetOpen(false);
     }
   };
 
@@ -78,7 +78,7 @@ export default function Header() {
             ))}
             <ThemeToggle />
             <Button asChild>
-                <Link href="/contact">Start a Project</Link>
+                <Link href="/contact" onClick={(e) => handleLinkClick('/contact', e)}>Start a Project</Link>
             </Button>
         </nav>
 
@@ -105,7 +105,7 @@ export default function Header() {
                             </Link>
                         ))}
                          <Button asChild className="mt-4">
-                            <Link href="/contact" onClick={() => setIsSheetOpen(false)}>Start a Project</Link>
+                            <Link href="/contact" onClick={(e) => handleLinkClick('/contact', e)}>Start a Project</Link>
                         </Button>
                     </nav>
                 </SheetContent>
