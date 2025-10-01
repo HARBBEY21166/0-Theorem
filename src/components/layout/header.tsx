@@ -8,6 +8,7 @@ import { Menu } from 'lucide-react';
 import { useState } from 'react';
 import Image from 'next/image';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
+import { usePathname, useRouter } from 'next/navigation';
 
 const navLinks = [
     { href: "/services", label: "Services" },
@@ -20,6 +21,22 @@ const navLinks = [
 
 export default function Header() {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleLinkClick = (href: string, e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (href === pathname) {
+      e.preventDefault();
+      router.refresh();
+      if (isSheetOpen) {
+        setIsSheetOpen(false);
+      }
+    } else {
+      if (isSheetOpen) {
+        setIsSheetOpen(false);
+      }
+    }
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -35,7 +52,7 @@ export default function Header() {
         <nav className="hidden md:flex items-center gap-2">
             {navLinks.map(link => (
                  <Button variant="ghost" asChild key={link.href}>
-                    <Link href={link.href}>{link.label}</Link>
+                    <Link href={link.href} onClick={(e) => handleLinkClick(link.href, e)}>{link.label}</Link>
                  </Button>
             ))}
             <ThemeToggle />
@@ -60,7 +77,7 @@ export default function Header() {
                              <Link
                                 key={link.href}
                                 href={link.href}
-                                onClick={() => setIsSheetOpen(false)}
+                                onClick={(e) => handleLinkClick(link.href, e)}
                                 className="block px-2 py-1 text-lg"
                              >
                                 {link.label}
