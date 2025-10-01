@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useMemo } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -191,6 +191,12 @@ export default function PortfolioGallery() {
             {selectedProject && (
                 <Dialog open={!!selectedProject} onOpenChange={(open) => !open && handleClose()}>
                      <DialogContent className="max-w-6xl w-full p-0 bg-card border-border overflow-hidden motion-safe:animate-scale-in">
+                        <DialogHeader className="sr-only">
+                          <DialogTitle>{selectedProject.title}</DialogTitle>
+                          <DialogDescription>
+                            Detailed view of the {selectedProject.title} project, including the challenge, solution, and result.
+                          </DialogDescription>
+                        </DialogHeader>
                         <div className="grid grid-cols-1 md:grid-cols-2 max-h-[90vh]">
                             <div className="relative h-[300px] md:h-auto">
                                 <Image
