@@ -1,13 +1,12 @@
 "use client";
 
-import { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { AnimatePresence, motion } from 'framer-motion';
 import { X, ArrowLeft, ArrowRight } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { srOnly } from 'react-day-picker';
 
 const allProjects = [
   {
@@ -163,7 +162,7 @@ export default function PortfolioGallery() {
     <section id="portfolio-gallery" className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
         <div className="flex justify-center items-center mb-12">
-          <div className="bg-card/50 p-2 rounded-full flex gap-2">
+          <div className="bg-card/50 p-2 rounded-full flex flex-wrap justify-center gap-2">
             {filters.map((filter) => (
               <Button
                 key={filter}
