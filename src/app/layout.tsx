@@ -23,7 +23,7 @@ export default function RootLayout({
     // Simulate loading time for demonstration, remove in production
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 500); // Adjust time as needed
+    }, 8000); // Adjust time as needed
 
     return () => clearTimeout(timer);
   }, []);
