@@ -1,3 +1,4 @@
+
 "use client";
 
 import {
@@ -10,8 +11,18 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Check, Code, WordPress, Palette, LayoutTemplate, Smartphone } from "lucide-react";
+import { Check, Code, Palette, LayoutTemplate, Smartphone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+
+const WordPressIcon = (props: React.SVGProps<SVGSVGElement>) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 12c-3.5 0-6.5-2.2-6.5-5.5S8.5 1 12 1s6.5 2.2 6.5 5.5-3 5.5-6.5 5.5z"/>
+        <path d="M12 12c1.5 0 3.5 0 5.5 0 2.5 0 4.5 1.5 4.5 4s-2 4-4.5 4-3-1.5-4-3"/>
+        <path d="M12 12c-1.5 0-3.5 0-5.5 0-2.5 0-4.5 1.5-4.5 4s2 4 4.5 4 3-1.5 4-3"/>
+        <path d="M2.5 9c0-2 1.5-4 4-4"/>
+        <path d="M21.5 9c0-2-1.5-4-4-4"/>
+    </svg>
+)
 
 const pricingData = {
   "Website Development": {
@@ -54,7 +65,7 @@ const pricingData = {
     ],
   },
   "WordPress Websites": {
-    icon: <WordPress className="w-5 h-5 mr-2" />,
+    icon: <WordPressIcon className="w-5 h-5 mr-2" />,
     accentColor: "secondary",
     packages: [
       {
