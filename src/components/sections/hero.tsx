@@ -56,7 +56,7 @@ export default function HeroSection() {
             <spline-viewer hint url="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"></spline-viewer>
           ) : (
             <Image 
-              src="https://picsum.photos/seed/hero-fallback/1920/1080"
+              src="https://i.pinimg.com/1200x/47/d4/f8/47d4f83418e236917636810a3563cc61.jpg"
               alt="Abstract background"
               fill
               style={{ objectFit: 'cover' }}

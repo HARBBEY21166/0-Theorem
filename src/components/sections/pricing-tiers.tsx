@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Check, Code, Palette, LayoutTemplate, Smartphone } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from 'next/link';
 
 const WordPressIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -268,8 +269,10 @@ const PackageCard = ({ pkg, accentColor }: { pkg: Package, accentColor: string }
                 <strong>Delivery:</strong> {pkg.delivery}
             </p>
         )}
-        <Button size="lg" className="w-full" style={getButtonColorStyle(accentColor)}>
-          Get Started
+        <Button size="lg" className="w-full" style={getButtonColorStyle(accentColor)} asChild>
+          <Link href="https://wa.me/27641663906" target="_blank" rel="noopener noreferrer">
+            Get Started
+          </Link>
         </Button>
       </CardFooter>
     </Card>
