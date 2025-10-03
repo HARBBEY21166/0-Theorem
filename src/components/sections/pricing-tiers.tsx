@@ -11,6 +11,19 @@ import { Check } from 'lucide-react';
 gsap.registerPlugin(ScrollTrigger);
 
 const tiers = [
+    {
+    name: "Graphics Design",
+    price: "Starting at $2,500",
+    tagline: "Visuals that captivate your audience.",
+    accentColor: "accent",
+    features: [
+      "Logo & Icon Design",
+      "Social Media Asset Kit",
+      "Marketing Material Templates",
+      "Business Card Design",
+      "Up to 3 Revisions",
+    ],
+  },
   {
     name: "The Foundation",
     price: "Starting at $4,500",
@@ -42,7 +55,7 @@ const tiers = [
     name: "The Ecosystem",
     price: "Project-Based",
     tagline: "Create a scalable platform.",
-    accentColor: "accent",
+    accentColor: "foreground",
     features: [
       "Everything in 'Architecture'",
       "Web Application Development",
@@ -84,7 +97,7 @@ export default function PricingTiers() {
   return (
     <section ref={sectionRef} id="pricing-tiers" className="py-20">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
           {tiers.map((tier, index) => (
             <div key={tier.name} ref={el => cardsRef.current[index] = el} className="h-full">
               <Card className={cn(
@@ -125,7 +138,10 @@ export default function PricingTiers() {
                     onClick={handleGetStartedClick}
                     size="lg" 
                     className="w-full text-lg" 
-                    style={{ 
+                    style={tier.accentColor === 'foreground' ? {
+                      backgroundColor: `hsl(var(--foreground))`,
+                      color: `hsl(var(--background))`
+                    } : { 
                       backgroundColor: `hsl(var(--${tier.accentColor}))`,
                       color: `hsl(var(--${tier.accentColor}-foreground))`
                     }}

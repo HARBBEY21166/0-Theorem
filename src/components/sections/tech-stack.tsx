@@ -13,18 +13,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const technologies = [
-  { name: "React", logo: "/logos/react.svg" },
+  { name: "React", logo: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png" },
   { name: "Next.js", logo: "/logos/nextjs.svg" },
-  { name: "Node.js", logo: "/logos/nodejs.svg" },
-  { name: "TypeScript", logo: "/logos/typescript.svg" },
+  { name: "Node.js", logo: "https://img.icons8.com/color/96/nodejs.png" },
+  { name: "TypeScript", logo: "https://img.icons8.com/color/96/typescript.png" },
   { name: "JavaScript", logo: "https://img.icons8.com/color/96/javascript--v1.png" },
   { name: "Figma", logo: "https://img.icons8.com/color/96/figma--v1.png" },
-  { name: "Illustrator", logo: "/logos/illustrator.svg" },
-  { name: "Photoshop", logo: "/logos/photoshop.svg" },
-  { name: "Firebase", logo: "/logos/firebase.svg" },
-  { name: "Tailwind CSS", logo: "/logos/tailwindcss.svg" },
-  { name: "HTML5", logo: "/logos/html5.svg" },
-  { name: "CSS3", logo: "/logos/css3.svg" },
+  { name: "Coreldraw", logo: "https://img.icons8.com/color/96/coreldraw.png" },
+  { name: "Photoshop", logo: "https://img.icons8.com/color/96/adobe-photoshop--v1.png" },
+  { name: "Firebase", logo: "https://img.icons8.com/external-tal-revivo-color-tal-revivo/96/external-firebase-a-googles-mobile-platform-that-helps-you-quickly-develop-high-quality-apps-logo-color-tal-revivo.png" },
+  { name: "Wordpress", logo: "https://img.icons8.com/color/96/wordpress.png" },
+  { name: "HTML5", logo: "https://img.icons8.com/color/96/html-5--v1.png" },
+  { name: "CSS3", logo: "https://img.icons8.com/color/96/css3.png" },
 ];
 
 const TechLogo = ({ name, logo }: { name: string, logo: string }) => (
