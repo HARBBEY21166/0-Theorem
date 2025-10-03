@@ -59,7 +59,7 @@ export default function HeroSection() {
               src="https://i.pinimg.com/1200x/47/d4/f8/47d4f83418e236917636810a3563cc61.jpg"
               alt="Abstract background"
               fill
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'fill' }}
               className="opacity-20"
               priority
               data-ai-hint="abstract background"
