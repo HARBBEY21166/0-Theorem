@@ -23,7 +23,7 @@ export default function AboutHero() {
           <div ref={photoRef} className="lg:col-span-1 flex justify-center">
             <div className="relative w-64 h-64 sm:w-80 sm:h-80">
               <Image
-                src="https://picsum.photos/seed/abiodun/400/400"
+                src="https://i.pinimg.com/1200x/1c/2c/a8/1c2ca8837147cd8176756a3397db2131.jpg"
                 alt="Abiodun Abbey Aina"
                 width={400}
                 height={400}
@@ -31,7 +31,7 @@ export default function AboutHero() {
                 data-ai-hint="professional man portrait"
                 priority
               />
-              <div className="absolute inset-0 rounded-full border-2 border-primary/50 animate-pulse"></div>
+              <div className="absolute inset-0 rounded-full border-primary/50 animate-pulse"></div>
             </div>
           </div>
           <div className="lg:col-span-2 text-center lg:text-left">
