@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -37,11 +38,38 @@ export default function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    console.log(values);
-    setIsSubmitting(false);
-    setIsSubmitted(true);
+    
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "7bff244b-11e9-43da-814c-af569e6f1ea8",
+          name: values.name,
+          email: values.email,
+          company: values.company,
+          projectType: values.projectType,
+          message: values.message,
+        }),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setIsSubmitted(true);
+      } else {
+        // You can handle submission errors here, e.g., show a toast notification.
+        console.error("Form submission error:", result);
+      }
+    } catch (error) {
+      // You can handle network errors here.
+      console.error("An error occurred:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
