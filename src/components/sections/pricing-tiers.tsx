@@ -1,158 +1,303 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
-import { Check } from 'lucide-react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Check, Code, WordPress, Palette, LayoutTemplate, Smartphone } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const tiers = [
-    {
-    name: "Graphics Design",
-    price: "Starting at $2,500",
-    tagline: "Visuals that captivate your audience.",
-    accentColor: "accent",
-    features: [
-      "Logo & Icon Design",
-      "Social Media Asset Kit",
-      "Marketing Material Templates",
-      "Business Card Design",
-      "Up to 3 Revisions",
-    ],
-  },
-  {
-    name: "The Foundation",
-    price: "Starting at $4,500",
-    tagline: "Establish your core identity.",
-    accentColor: "secondary",
-    features: [
-      "Full Brand Strategy",
-      "Logo Design Suite",
-      "Comprehensive Style Guide",
-      "Social Media Kit",
-      "2 Design Revisions",
-    ],
-  },
-  {
-    name: "The Architecture",
-    price: "Starting at $9,500",
-    tagline: "Build your digital home.",
+const pricingData = {
+  "Website Development": {
+    icon: <Code className="w-5 h-5 mr-2" />,
     accentColor: "primary",
-    recommended: true,
-    features: [
-      "Includes 'The Foundation'",
-      "Custom Website Design",
-      "Up to 5 Pages",
-      "Responsive Development",
-      "CMS & SEO Setup",
+    packages: [
+      {
+        name: "Starter",
+        price: "R 1,800",
+        description: "1 Page / Landing Page",
+        features: [
+          "Mobile responsive",
+          "Up to 4 sections (Home, About, Services, Contact)",
+          "Contact form + social links",
+        ],
+        delivery: "3-4 days",
+      },
+      {
+        name: "Business Website",
+        price: "R 3,500",
+        description: "Up to 5 Pages",
+        features: [
+          "Custom-coded with React.js / HTML & CSS",
+          "Up to 5 pages (Home, About, Services, Portfolio/Blog, Contact)",
+          "Basic SEO + responsive design",
+        ],
+        delivery: "5-7 days",
+      },
+      {
+        name: "Professional Website",
+        price: "R 6,000",
+        description: "10 Pages with advanced features",
+        features: [
+          "Custom-coded with animations",
+          "Blog setup, gallery, testimonial slider",
+          "Google Analytics + SEO basics",
+        ],
+        delivery: "7-10 days",
+      },
     ],
   },
-  {
-    name: "The Ecosystem",
-    price: "Project-Based",
-    tagline: "Create a scalable platform.",
-    accentColor: "foreground",
-    features: [
-      "Everything in 'Architecture'",
-      "Web Application Development",
-      "User Accounts & Database",
-      "API Integrations",
-      "Unlimited Potential",
+  "WordPress Websites": {
+    icon: <WordPress className="w-5 h-5 mr-2" />,
+    accentColor: "secondary",
+    packages: [
+      {
+        name: "Basic WordPress Site",
+        price: "R 2,800",
+        description: "5 Pages, easy to manage",
+        features: [
+          "Premium theme setup",
+          "Up to 5 pages",
+          "Free plugins for speed & security",
+        ],
+        delivery: "5-7 days",
+      },
+      {
+        name: "Business WordPress Site",
+        price: "R 4,500",
+        description: "10 Pages with customization",
+        features: [
+          "Custom theme customization",
+          "SEO setup, contact forms, social media integration",
+        ],
+        delivery: "7-10 days",
+      },
+      {
+        name: "E-Commerce WordPress",
+        price: "From R 7,000",
+        description: "WooCommerce Store",
+        features: [
+          "Up to 10 products (add more at R 200 each)",
+          "Cart, checkout, payment gateway setup",
+          "Stock management system",
+        ],
+        delivery: "Varies",
+      },
     ],
   },
-];
+  "UI/UX Design": {
+    icon: <LayoutTemplate className="w-5 h-5 mr-2" />,
+    accentColor: "accent",
+    packages: [
+      {
+        name: "Landing Page Design",
+        price: "R 1,200",
+        description: "A single, high-impact page.",
+        features: [],
+        delivery: ""
+      },
+      {
+        name: "Full Website Design",
+        price: "R 2,500",
+        description: "Up to 5 Pages in Figma.",
+        features: [],
+        delivery: ""
+      },
+      {
+        name: "Mobile App UI",
+        price: "R 3,800",
+        description: "Up to 10 Screens.",
+        features: [],
+        delivery: ""
+      },
+      {
+        name: "Complete UI/UX Package",
+        price: "R 5,500",
+        description: "Website/App + Prototype.",
+        features: [],
+        delivery: ""
+      },
+    ],
+  },
+  "Graphic Design": {
+    icon: <Palette className="w-5 h-5 mr-2" />,
+    accentColor: "yellow", // Custom color, will need to be handled
+    packages: [
+      { name: "Logo Design", price: "R 1,000", description: "", features: [], delivery: "" },
+      { name: "Business Card Design", price: "R 700", description: "", features: [], delivery: "" },
+      { name: "Flyer / Poster Design", price: "R 900", description: "", features: [], delivery: "" },
+      {
+        name: "Full Brand Kit",
+        price: "R 3,000",
+        description: "Logo, Card, Letterhead, Social Pack.",
+        features: [],
+        delivery: ""
+      },
+    ],
+  },
+  "Mobile App Development": {
+    icon: <Smartphone className="w-5 h-5 mr-2" />,
+    accentColor: "purple", // Custom color
+    packages: [
+      {
+        name: "Basic App",
+        price: "R 5,000",
+        description: "2-3 Screens",
+        features: ["Info display, contact form, links"],
+        delivery: ""
+      },
+      {
+        name: "Business App",
+        price: "R 8,000",
+        description: "Up to 6 Screens",
+        features: [
+          "User authentication (login/signup)",
+          "Services / Products showcase",
+          "Contact & chat integration",
+        ],
+        delivery: ""
+      },
+      {
+        name: "E-Commerce / Booking App",
+        price: "From R 12,000",
+        description: "Advanced Functionality",
+        features: [
+          "Shopping cart OR booking system",
+          "Payment gateway setup",
+          "Push notifications",
+        ],
+        delivery: ""
+      },
+    ],
+  },
+};
+
+type Package = {
+  name: string;
+  price: string;
+  description: string;
+  features: string[];
+  delivery: string;
+};
+
+const getAccentColorStyle = (color: string) => {
+  const colorMap: { [key: string]: string } = {
+    primary: "hsl(var(--primary))",
+    secondary: "hsl(var(--secondary))",
+    accent: "hsl(var(--accent))",
+    yellow: "#FBBF24", // Tailwind yellow-400
+    purple: "#A78BFA", // Tailwind violet-400
+    foreground: "hsl(var(--foreground))",
+  };
+  return { color: colorMap[color] || colorMap['primary'] };
+};
+
+const getButtonColorStyle = (color: string) => {
+    const colorMap: { [key: string]: string } = {
+        primary: "hsl(var(--primary))",
+        secondary: "hsl(var(--secondary))",
+        accent: "hsl(var(--accent))",
+        yellow: "#FBBF24",
+        purple: "#A78BFA",
+        foreground: "hsl(var(--foreground))",
+    };
+
+    const foregroundMap: { [key: string]: string } = {
+        primary: "hsl(var(--primary-foreground))",
+        secondary: "hsl(var(--secondary-foreground))",
+        accent: "hsl(var(--accent-foreground))",
+        yellow: "#18181B", // zinc-900
+        purple: "#18181B",
+        foreground: "hsl(var(--background))",
+    }
+
+    return { 
+        backgroundColor: colorMap[color] || colorMap['primary'],
+        color: foregroundMap[color] || foregroundMap['primary']
+    };
+};
+
+
+const PackageCard = ({ pkg, accentColor }: { pkg: Package, accentColor: string }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    className="h-full"
+  >
+    <Card className="h-full flex flex-col bg-card/50 hover:bg-card border-border/20 hover:border-primary/50 transition-all duration-300">
+      <CardHeader>
+        <CardTitle className="font-headline text-2xl" style={getAccentColorStyle(accentColor)}>
+          {pkg.name}
+        </CardTitle>
+        {pkg.description && <CardDescription>{pkg.description}</CardDescription>}
+      </CardHeader>
+      <CardContent className="flex-grow">
+        <div className="text-4xl font-bold font-headline mb-6">{pkg.price}</div>
+        {pkg.features.length > 0 && (
+          <ul className="space-y-3 text-muted-foreground">
+            {pkg.features.map((feature, i) => (
+              <li key={i} className="flex items-start">
+                <Check className="w-5 h-5 text-green-500 mr-3 mt-1 shrink-0" />
+                <span>{feature}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+      </CardContent>
+      <CardFooter className="flex flex-col items-start">
+        {pkg.delivery && (
+            <p className="text-xs text-muted-foreground mb-4">
+                <strong>Delivery:</strong> {pkg.delivery}
+            </p>
+        )}
+        <Button size="lg" className="w-full" style={getButtonColorStyle(accentColor)}>
+          Get Started
+        </Button>
+      </CardFooter>
+    </Card>
+  </motion.div>
+);
 
 export default function PricingTiers() {
-  const sectionRef = useRef(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-
-  useEffect(() => {
-    gsap.fromTo(cardsRef.current,
-      { opacity: 0, y: 100 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top 80%',
-        }
-      }
-    );
-  }, []);
-
-  const handleGetStartedClick = (e: React.MouseEvent) => {
-    e.preventDefault();
-    document.getElementById('custom-solution-cta')?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
-
   return (
-    <section ref={sectionRef} id="pricing-tiers" className="py-20">
+    <section id="pricing-tiers" className="py-20 sm:py-24">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 items-stretch max-w-4xl mx-auto">
-          {tiers.map((tier, index) => (
-            <div key={tier.name} ref={el => cardsRef.current[index] = el} className="h-full">
-              <Card className={cn(
-                "h-full flex flex-col bg-card/50 hover:bg-card border-2 border-transparent transition-all duration-300 group relative overflow-hidden",
-                tier.recommended ? 'border-primary shadow-2xl shadow-primary/20' : 'hover:border-border'
-              )}>
-                {tier.recommended && (
-                  <div className="absolute top-4 -right-12 transform rotate-45 bg-primary text-primary-foreground px-12 py-1.5 text-sm font-bold shadow-md">
-                    Most Common
-                  </div>
-                )}
-                <div 
-                  className="absolute top-0 left-0 h-1 w-full opacity-50" 
-                  style={{ background: `hsl(var(--${tier.accentColor}))` }} 
-                />
-                
-                <CardHeader className="text-center pt-10">
-                  <CardTitle className="text-2xl font-headline" style={{ color: `hsl(var(--${tier.accentColor}))` }}>{tier.name}</CardTitle>
-                  <CardDescription className="text-muted-foreground">{tier.tagline}</CardDescription>
-                  <div className="pt-4">
-                    <span className="text-4xl font-bold font-headline text-foreground">{tier.price.split(' ')[2]}</span>
-                    <span className="text-sm text-muted-foreground ml-1">{tier.name === "The Ecosystem" ? "" : "/ starting"}</span>
-                     <p className="text-lg font-bold font-headline">{tier.name !== "The Ecosystem" ? tier.price.split(' ')[0] + ' ' + tier.price.split(' ')[1] : tier.price}</p>
-                  </div>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <ul className="space-y-4">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3">
-                        <Check className="w-5 h-5 text-green-500 mt-1 shrink-0" />
-                        <span className="text-muted-foreground">{feature}</span>
-                      </li>
+        <Tabs defaultValue="Website Development" className="w-full">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-3 lg:grid-cols-5 h-auto mb-10">
+            {Object.entries(pricingData).map(([title, data]) => (
+              <TabsTrigger key={title} value={title} className="py-3 flex items-center justify-center">
+                {data.icon} {title}
+              </TabsTrigger>
+            ))}
+          </TabsList>
+
+          <AnimatePresence mode="wait">
+            {Object.entries(pricingData).map(([title, data]) => (
+              <TabsContent key={title} value={title}>
+                <motion.div
+                  key={title}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {data.packages.map((pkg) => (
+                      <PackageCard key={pkg.name} pkg={pkg} accentColor={data.accentColor} />
                     ))}
-                  </ul>
-                </CardContent>
-                <CardFooter>
-                  <Button 
-                    onClick={handleGetStartedClick}
-                    size="lg" 
-                    className="w-full text-lg" 
-                    style={tier.accentColor === 'foreground' ? {
-                      backgroundColor: `hsl(var(--foreground))`,
-                      color: `hsl(var(--background))`
-                    } : { 
-                      backgroundColor: `hsl(var(--${tier.accentColor}))`,
-                      color: `hsl(var(--${tier.accentColor}-foreground))`
-                    }}
-                  >
-                    Get Started
-                  </Button>
-                </CardFooter>
-              </Card>
-            </div>
-          ))}
-        </div>
+                  </div>
+                </motion.div>
+              </TabsContent>
+            ))}
+          </AnimatePresence>
+        </Tabs>
       </div>
     </section>
   );
