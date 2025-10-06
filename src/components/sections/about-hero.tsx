@@ -34,9 +34,10 @@ export default function AboutHero() {
               <div className="absolute inset-0 rounded-full border-primary/50 animate-pulse"></div>
             </div>
           </div>
-          <div className="lg:col-span-2 text-center lg:text-left">
+          <div className="lg:col-span-2 text-center lg:text-left mt-16">
             <div className="overflow-hidden">
-                <h1 ref={headlineRef} className="text-4xl md:text-6xl font-headline font-bold">
+                <h1 ref={headlineRef} className="text-4xl md:text-6xl font-headline font-bold"
+                style={{WebkitTextStroke: '0.3px white'}}>
                 The Mind Behind the Theorem
                 </h1>
             </div>
