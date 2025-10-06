@@ -37,7 +37,7 @@ export default function AboutHero() {
           <div className="lg:col-span-2 text-center lg:text-left mt-16">
             <div className="overflow-hidden">
                 <h1 ref={headlineRef} className="text-4xl md:text-6xl font-headline font-bold"
-                style={{WebkitTextStroke: '0.3px white'}}>
+                style={{WebkitTextStroke: '0.3px #4361EE'}}>
                 The Mind Behind the Theorem
                 </h1>
             </div>
