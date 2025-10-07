@@ -61,7 +61,7 @@ export default function Toolbox() {
                         <PolarGrid className="fill-background stroke-border" />
                         <PolarAngleAxis
                             dataKey="skill"
-                            className="fill-foreground font-headline text-lg"
+                            className="toolbox-chart-label font-headline"
                         />
                         <PolarRadiusAxis
                             tickCount={4}
