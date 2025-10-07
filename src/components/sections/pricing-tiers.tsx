@@ -92,7 +92,7 @@ const pricingData = {
       },
       {
         name: "E-Commerce WordPress",
-        price: "From R 7,000",
+        price: "From R 6,500",
         description: "WooCommerce Store",
         features: [
           "Up to 10 products (add more at R 200 each)",
@@ -109,28 +109,28 @@ const pricingData = {
     packages: [
       {
         name: "Landing Page Design",
-        price: "R 1,200",
+        price: "R 900",
         description: "A single, high-impact page.",
         features: [],
         delivery: ""
       },
       {
         name: "Full Website Design",
-        price: "R 2,500",
+        price: "R 1,500",
         description: "Up to 5 Pages in Figma.",
         features: [],
         delivery: ""
       },
       {
         name: "Mobile App UI",
-        price: "R 3,800",
+        price: "R 2,800",
         description: "Up to 10 Screens.",
         features: [],
         delivery: ""
       },
       {
         name: "Complete UI/UX Package",
-        price: "R 5,500",
+        price: "R 3,900",
         description: "Website/App + Prototype.",
         features: [],
         delivery: ""
@@ -141,12 +141,12 @@ const pricingData = {
     icon: <Palette className="w-5 h-5 mr-2" />,
     accentColor: "yellow", // Custom color, will need to be handled
     packages: [
-      { name: "Logo Design", price: "R 1,000", description: "", features: [], delivery: "" },
-      { name: "Business Card Design", price: "R 700", description: "", features: [], delivery: "" },
-      { name: "Flyer / Poster Design", price: "R 900", description: "", features: [], delivery: "" },
+      { name: "Logo Design", price: "R 250", description: "", features: [], delivery: "" },
+      { name: "Business Card Design", price: "R 350", description: "", features: [], delivery: "" },
+      { name: "Flyer / Poster Design", price: "R 350", description: "", features: [], delivery: "" },
       {
         name: "Full Brand Kit",
-        price: "R 3,000",
+        price: "R 1,000",
         description: "Logo, Card, Letterhead, Social Pack.",
         features: [],
         delivery: ""
@@ -159,14 +159,14 @@ const pricingData = {
     packages: [
       {
         name: "Basic App",
-        price: "R 5,000",
+        price: "R 3,000",
         description: "2-3 Screens",
         features: ["Info display, contact form, links"],
         delivery: ""
       },
       {
         name: "Business App",
-        price: "R 8,000",
+        price: "R 4,500",
         description: "Up to 6 Screens",
         features: [
           "User authentication (login/signup)",
@@ -177,7 +177,7 @@ const pricingData = {
       },
       {
         name: "E-Commerce / Booking App",
-        price: "From R 12,000",
+        price: "From R 7,200",
         description: "Advanced Functionality",
         features: [
           "Shopping cart OR booking system",

@@ -43,7 +43,7 @@ export default function AboutHero() {
             </div>
             <div className="overflow-hidden">
                 <p ref={subheadlineRef} className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0">
-                A fusion of logical precision and creative vision. I don't just build products; I solve complex digital equations with elegance and purpose.
+                A fusion of logic and creativity, that’s the theorem. I approach every project as a digital equation waiting to be solved with elegance and clarity. It’s not just about websites or visuals; it’s about designing meaning, crafting experiences, and bringing structure to imagination.
                 </p>
             </div>
           </div>
