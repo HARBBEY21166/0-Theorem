@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useRef } from 'react';
@@ -115,11 +116,11 @@ export default function ServicesDeepDive() {
         case 'custom-software-development':
             return <AnimatedCode />;
         case 'ui-ux-design':
-            return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://picsum.photos/seed/design-mockup/600/400" alt="UI Design" width={600} height={400} className="rounded-md" data-ai-hint="design mockup" /></div>;
+            return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://i.pinimg.com/1200x/14/0f/da/140fda9f2dcaa23a084f0c1995d9e05f.jpg" alt="UI Design" width={600} height={400} className="rounded-md w-auto h-full" data-ai-hint="design mockup" /></div>;
         case 'brand-identity':
-             return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://picsum.photos/seed/brand-mockup/600/400" alt="Brand Identity" width={600} height={400} className="rounded-md" data-ai-hint="brand identity" /></div>;
+             return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://i.pinimg.com/1200x/3a/0c/b7/3a0cb736d0974f4234afffdcaf25f0e3.jpg" alt="Brand Identity" width={600} height={400} className="rounded-md w-auto h-full" data-ai-hint="brand identity" priority /></div>;
         case 'front-end-engineering':
-            return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://picsum.photos/seed/frontend-mockup/600/400" alt="Frontend Engineering" width={600} height={400} className="rounded-md" data-ai-hint="frontend code" /></div>;
+            return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://i.pinimg.com/1200x/a5/34/da/a534daeebc0440a8c1fdc48a19ac5efe.jpg" alt="Frontend Engineering" width={600} height={400} className="rounded-md w-auto h-full" data-ai-hint="frontend code" /></div>;
         default:
             return null;
     }

@@ -10,12 +10,12 @@ import {
 import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts"
 
 const chartData = [
-  { skill: "Front-End", proficiency: 95 },
-  { skill: "UI Design", proficiency: 90 },
+  { skill: "UI/UX", proficiency: 95 },
+  { skill: "Front-End", proficiency: 90 },
   { skill: "Branding", proficiency: 75 },
   { skill: "Back-End", proficiency: 80 },
-  { skill: "UX Research", proficiency: 85 },
-  { skill: "DevOps", proficiency: 70 },
+  { skill: "Creativity", proficiency: 94 },
+  { skill: "Graphic", proficiency: 70 },
 ]
 
 const chartConfig = {
