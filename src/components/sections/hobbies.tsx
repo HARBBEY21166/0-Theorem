@@ -2,7 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import { Card } from '@/components/ui/card';
-import { Camera, Music, Gamepad2, Rocket } from 'lucide-react';
+import { Tv, Music, Gamepad2, Brush } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -10,24 +10,24 @@ gsap.registerPlugin(ScrollTrigger);
 
 const hobbies = [
   {
-    icon: <Camera className="w-8 h-8" />,
-    title: "Photography",
-    description: "Capturing moments and telling stories through a lens.",
+    icon: <Brush className="w-8 h-8" />,
+    title: "Trying Design Trends",
+    description: "Experimenting with modern aesthetics and innovative visual styles to stay ahead of the curve.",
   },
   {
     icon: <Music className="w-8 h-8" />,
-    title: "Music Production",
-    description: "Creating soundscapes and composing electronic music.",
+    title: "Listening to Music",
+    description: "Finding inspiration and rhythm in every beat music fuels my creativity and focus.",
   },
   {
     icon: <Gamepad2 className="w-8 h-8" />,
     title: "Gaming",
-    description: "Exploring virtual worlds and engaging in strategic gameplay.",
+    description: "Immersing myself in virtual worlds that challenge strategy, imagination, and storytelling.",
   },
   {
-    icon: <Rocket className="w-8 h-8" />,
-    title: "Astrophotography",
-    description: "Gazing at the cosmos and capturing the beauty of the night sky.",
+    icon: <Tv className="w-8 h-8" />,
+    title: "Movies",
+    description: "Exploring powerful stories, visuals, and cinematography that inspire creative storytelling.",
   },
 ];
 

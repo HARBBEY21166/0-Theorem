@@ -95,7 +95,7 @@ export default function Journey() {
               className={`timeline-item relative flex items-start md:justify-center md:items-center my-8 md:my-0 md:[&:not(:first-child)]:mt-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
             >
               <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 !== 0 ? 'md:text-left md:pl-8' : 'md:text-right md:pr-8'}`}>
-                 <div className="timeline-card">
+                 <div className="timeline-card mt-3">
                     <p className="text-sm text-primary font-semibold">{item.date}</p>
                     <h3 className="text-xl font-headline font-bold mt-1">{item.title}</h3>
                     <p className="mt-2 text-muted-foreground">{item.description}</p>

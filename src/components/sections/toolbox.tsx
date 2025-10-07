@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -6,7 +7,7 @@ import {
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
-import { Label, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts"
+import { PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart } from "recharts"
 
 const chartData = [
   { skill: "Front-End", proficiency: 95 },
@@ -40,44 +41,41 @@ export default function Toolbox() {
                     className="mx-auto aspect-square h-full"
                 >
                     <RadarChart
-                    data={chartData}
-                    margin={{
-                        top: 20,
-                        right: 20,
-                        bottom: 20,
-                        left: 20,
-                    }}
+                        data={chartData}
+                        margin={{
+                            top: 20,
+                            right: 20,
+                            bottom: 20,
+                            left: 20,
+                        }}
                     >
-                    <ChartTooltip
-                        cursor={false}
-                        content={
-                        <ChartTooltipContent
-                            indicator="dot"
-                            labelKey="proficiency"
+                        <ChartTooltip
+                            cursor={false}
+                            content={
+                            <ChartTooltipContent
+                                indicator="dot"
+                                labelKey="proficiency"
+                            />
+                            }
                         />
-                        }
-                    />
-                    <PolarGrid className="fill-background stroke-border" />
-                    <PolarRadiusAxis
-                        tickCount={4}
-                        tick={false}
-                        axisLine={false}
-                        angle={30}
-                    />
-                    <Radar
-                        dataKey="proficiency"
-                        fill="var(--color-proficiency)"
-                        fillOpacity={0.4}
-                        stroke="var(--color-proficiency)"
-                        strokeWidth={2}
-                    >
-                        <Label
-                        dataKey="skill"
-                        angle={0}
-                        position="outside"
-                        className="fill-foreground font-headline text-lg"
+                        <PolarGrid className="fill-background stroke-border" />
+                        <PolarAngleAxis
+                            dataKey="skill"
+                            className="fill-foreground font-headline text-lg"
                         />
-                    </Radar>
+                        <PolarRadiusAxis
+                            tickCount={4}
+                            tick={false}
+                            axisLine={false}
+                            angle={30}
+                        />
+                        <Radar
+                            dataKey="proficiency"
+                            fill="var(--color-proficiency)"
+                            fillOpacity={0.4}
+                            stroke="var(--color-proficiency)"
+                            strokeWidth={2}
+                        />
                     </RadarChart>
                 </ChartContainer>
             </div>
