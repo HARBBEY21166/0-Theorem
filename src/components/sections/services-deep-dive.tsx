@@ -120,7 +120,7 @@ export default function ServicesDeepDive() {
         case 'brand-identity':
              return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://i.pinimg.com/1200x/3a/0c/b7/3a0cb736d0974f4234afffdcaf25f0e3.jpg" alt="Brand Identity" width={600} height={400} className="rounded-md w-auto h-full" data-ai-hint="brand identity" priority /></div>;
         case 'front-end-engineering':
-            return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://i.pinimg.com/1200x/a5/34/da/a534daeebc0440a8c1fdc48a19ac5efe.jpg" alt="Frontend Engineering" width={600} height={400} className="rounded-md w-auto h-full" data-ai-hint="frontend code" /></div>;
+            return <div className="p-4 bg-card rounded-lg h-full"><Image src="https://i.pinimg.com/1200x/a5/34/da/a534daeebc0440a8c1fdc48a19ac5efe.jpg" alt="Frontend Engineering" width={600} height={400} className="rounded-md w-auto h-full" data-ai-hint="frontend code" priority /></div>;
         default:
             return null;
     }
