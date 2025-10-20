@@ -23,6 +23,9 @@ const config = {
         code: ['monospace'],
     },
     extend: {
+      backgroundImage: {
+        'primary-gradient': 'linear-gradient(to right, hsl(var(--primary)), hsl(var(--secondary)))',
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
