@@ -9,7 +9,7 @@ import Header from '@/components/layout/header';
 import Footer from '@/components/layout/footer';
 import { ThemeProvider } from '@/components/layout/theme-provider';
 import { inter, poppins } from '@/app/fonts';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useTransition } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 export default function RootLayout({
@@ -20,10 +20,10 @@ export default function RootLayout({
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulate loading time for demonstration
+    // Simulate initial asset loading
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 8000); // 8 seconds
+    }, 2000); 
 
     return () => clearTimeout(timer);
   }, []);
@@ -34,7 +34,7 @@ export default function RootLayout({
       </head>
       <body className={cn("font-body antialiased")}>
         {isLoading && (
-            <div className="flex justify-center items-center h-screen w-screen fixed top-0 left-0 bg-background z-50">
+            <div className="flex justify-center items-center h-screen w-screen fixed top-0 left-0 bg-background z-[999]">
                 <div className="w-64 h-64">
                     <DotLottieReact
                     src="https://lottie.host/f0e7431f-49f5-428c-8d8a-a625216ebbe7/W3UqdgLOaR.lottie"
@@ -44,17 +44,19 @@ export default function RootLayout({
                 </div>
             </div>
         )}
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+        <div className={cn(isLoading && "opacity-0")}>
+            <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+            >
+            <Header />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+            <Toaster />
+            </ThemeProvider>
+        </div>
       </body>
     </html>
   );
