@@ -47,7 +47,7 @@ export default function ContactForm() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "7bff244b-11e9-43da-814c-af569e6f1ea8",
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "7bff244b-11e9-43da-814c-af569e6f1ea8",
           name: values.name,
           email: values.email,
           company: values.company,
