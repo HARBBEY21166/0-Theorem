@@ -44,8 +44,8 @@ Getting this project up and running on your local machine is a breeze.
 First, clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/your-username/zero-theorem.git
-cd zero-theorem
+git clone https://github.com/HARBBEY21166/0-theorem.git
+cd 0-theorem
 ```
 
 ### 2. Install Dependencies
@@ -103,8 +103,22 @@ The project follows a standard Next.js App Router structure, designed for clarit
 
 We built Zero Theorem to be a community-driven project, and we welcome contributions of all kinds! Whether you're fixing a bug, improving a feature, or suggesting a new idea, your help is greatly appreciated.
 
--   **Found a Bug?** [Open an issue](https://github.com/your-username/zero-theorem/issues) and let us know.
+-   **Found a Bug?** [Open an issue](https://github.com/HARBBEY21166/0-theorem/issues) and let us know.
 -   **Have an Idea?** We'd love to hear it! Start a discussion.
 -   **Want to Contribute Code?** Fork the repository and submit a pull request.
 
-This project is a labor of love, and we're excited to see what we can build together. Thank you for being here!
+
+## 🎯 What's Next?
+
+- Customize the content in the component files to make it your own
+- Replace the Spline scene with your own 3D design
+- Update the color scheme in `tailwind.config.ts`
+- Deploy to Vercel with one click: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
+
+## 💫 From Our Studio to Yours
+
+We can't wait to see what incredible experiences you'll build with Zero Theorem. Tag us on Twitter or show us your creations—we'd love to feature them!
+
+---
+
+*Built with ❤️ by Abiodun (Abbey) Aina*
