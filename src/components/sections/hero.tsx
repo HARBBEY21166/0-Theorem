@@ -55,17 +55,7 @@ export default function HeroSection() {
        <div className="absolute inset-0 z-0 bg-background">
           {isDesktop ? (
             <spline-viewer hint url="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"></spline-viewer>
-          ) : (
-            <Image 
-              src="https://i.pinimg.com/1200x/47/d4/f8/47d4f83418e236917636810a3563cc61.jpg"
-              alt="Abstract background"
-              fill
-              style={{ objectFit: 'fill' }}
-              className="opacity-20"
-              priority
-              data-ai-hint="abstract background"
-            />
-          )}
+          ) : null}
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
