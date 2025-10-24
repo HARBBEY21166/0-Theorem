@@ -8,8 +8,8 @@ import Link from 'next/link';
 const contactLinks = [
   {
     icon: <Mail className="w-6 h-6" />,
-    label: "hello@zerotheorem.com",
-    href: "mailto:hello@zerotheorem.com",
+    label: "zerotheorem01@gmail.com",
+    href: "mailto:zerotheorem01@gmail.com",
   },
   {
     icon: <Calendar className="w-6 h-6" />,
