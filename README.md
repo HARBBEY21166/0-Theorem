@@ -77,7 +77,7 @@ You're all set! Start the development server with:
 npm run dev
 ```
 
-Open [http://localhost:9002](http://localhost:9002) in your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:9002](http://localhost:3000) in your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
 ---
 
@@ -117,7 +117,7 @@ We built Zero Theorem to be a community-driven project, and we welcome contribut
 
 ## 💫 From Our Studio to Yours
 
-We can't wait to see what incredible experiences you'll build with Zero Theorem. Tag us on Twitter or show us your creations—we'd love to feature them!
+We can't wait to see what incredible experiences you'll build with Zero Theorem. Tag us on Twitter or show us your creations, we'd love to feature them
 
 ---
 
