@@ -60,12 +60,15 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
-           <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground md:text-transparent" style={{ WebkitTextStroke: '1px hsl(var(--primary))' }}>
+           <h1
+            ref={headlineRef}
+            className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground md:text-transparent md:text-stroke-primary dark:md:text-white dark:md:text-stroke-none"
+          >
             We Solve the Equation of Digital Excellence.
           </h1>
         </div>
         <div className="overflow-hidden">
-          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-muted-foreground md:text-neutral-200">
+          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-muted-foreground">
             Zero Theorem is where precise software engineering meets visionary graphic design to build foundational solutions.
           </p>
         </div>

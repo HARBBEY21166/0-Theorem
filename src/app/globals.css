@@ -246,4 +246,13 @@
   .bg-primary-gradient {
     @apply bg-gradient-to-r from-primary to-secondary;
   }
+  .text-stroke-primary {
+    -webkit-text-stroke: 1px hsl(var(--primary));
+  }
+  .text-stroke-secondary {
+    -webkit-text-stroke: 1px hsl(var(--secondary));
+  }
+  .text-stroke-none {
+    -webkit-text-stroke: 0px;
+  }
 }
