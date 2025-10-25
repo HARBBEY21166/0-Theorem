@@ -60,7 +60,7 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
-          <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold text-foreground md:text-white py-4">
+           <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground md:text-white">
             We Solve the Equation of Digital Excellence.
           </h1>
         </div>
