@@ -1,68 +1,34 @@
 
 "use client";
 
-import { useRef, useEffect, useState }from 'react';
+import { useRef, useEffect }from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
 
-// @ts-ignore
-import type { SplineViewer } from '@splinetool/viewer';
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-      'spline-viewer': React.DetailedHTMLProps<React.HTMLAttributes<SplineViewer>, SplineViewer>;
-    }
-  }
-}
-
 export default function HeroSection() {
   const headlineRef = useRef(null);
   const subheadlineRef = useRef(null);
   const ctaRef = useRef(null);
-  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const checkIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
-    checkIsDesktop();
-    window.addEventListener('resize', checkIsDesktop);
-
-    if (window.innerWidth >= 768) {
-        const scriptId = 'spline-viewer-script';
-        if (!document.getElementById(scriptId)) {
-            const script = document.createElement('script');
-            script.id = scriptId;
-            script.type = 'module';
-            script.src = 'https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js';
-            document.head.appendChild(script);
-        }
-    }
-    
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
     tl.fromTo(headlineRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 })
       .fromTo(subheadlineRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.8')
       .fromTo(ctaRef.current, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, '-=0.8');
-
-    return () => window.removeEventListener('resize', checkIsDesktop);
   }, []);
 
   return (
     <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
        <div className="absolute inset-0 z-0 bg-background">
-          {isDesktop ? (
-            <spline-viewer hint url="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"></spline-viewer>
-          ) : null}
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent"></div>
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
            <h1
             ref={headlineRef}
-            className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground md:text-white"
+            className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground"
           >
             We Solve the Equation of Digital Excellence.
           </h1>
