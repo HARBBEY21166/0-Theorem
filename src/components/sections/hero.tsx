@@ -25,20 +25,23 @@ export default function HeroSection() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Spline is heavy on mobile, so we only load it on desktop.
     const checkIsDesktop = () => {
-      if (window.innerWidth >= 768) {
-        setIsDesktop(true);
-      }
+      setIsDesktop(window.innerWidth >= 768);
     };
+
     checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
 
+    // Ensure Spline script is loaded only on desktop
     if (window.innerWidth >= 768) {
-      const script = document.createElement('script');
-      script.type = 'module';
-      script.src = 'https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js';
-      document.head.appendChild(script);
+        const scriptId = 'spline-viewer-script';
+        if (!document.getElementById(scriptId)) {
+            const script = document.createElement('script');
+            script.id = scriptId;
+            script.type = 'module';
+            script.src = 'https://unpkg.com/@splinetool/viewer@1.10.57/build/spline-viewer.js';
+            document.head.appendChild(script);
+        }
     }
     
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
@@ -52,18 +55,18 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
        <div className="absolute inset-0 z-0 bg-background">
-          {isDesktop ? (
+          {isDesktop && (
             <spline-viewer hint url="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"></spline-viewer>
-          ) : null}
+          )}
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
-          <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold md:bg-clip-text md:text-transparent md:bg-gradient-to-br from-neutral-50 to-neutral-400 py-4 text-foreground">
+          <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold text-foreground md:bg-clip-text md:text-transparent md:bg-gradient-to-br from-neutral-50 to-neutral-400 py-4">
             We Solve the Equation of Digital Excellence.
           </h1>
         </div>
         <div className="overflow-hidden">
-          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-neutral-200 dark:text-neutral-200">
+          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-muted-foreground">
             Zero Theorem is where precise software engineering meets visionary graphic design to build foundational solutions.
           </p>
         </div>
