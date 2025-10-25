@@ -32,7 +32,6 @@ export default function HeroSection() {
     checkIsDesktop();
     window.addEventListener('resize', checkIsDesktop);
 
-    // Ensure Spline script is loaded only on desktop
     if (window.innerWidth >= 768) {
         const scriptId = 'spline-viewer-script';
         if (!document.getElementById(scriptId)) {
@@ -55,9 +54,9 @@ export default function HeroSection() {
   return (
     <section id="hero" className="relative h-screen min-h-[700px] w-full flex items-center justify-center text-center overflow-hidden">
        <div className="absolute inset-0 z-0 bg-background">
-          {isDesktop && (
+          {isDesktop ? (
             <spline-viewer hint url="https://prod.spline.design/PFrf9m-mSJfKX8Ul/scene.splinecode"></spline-viewer>
-          )}
+          ) : null}
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
