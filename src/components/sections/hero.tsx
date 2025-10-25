@@ -59,29 +59,31 @@ export default function HeroSection() {
           ) : null}
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
-        <div className="overflow-hidden pb-2">
-          <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold text-foreground md:bg-clip-text md:text-transparent md:bg-gradient-to-br from-neutral-50 to-neutral-400 py-4">
-            We Solve the Equation of Digital Excellence.
-          </h1>
-        </div>
-        <div className="overflow-hidden">
-          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-muted-foreground">
-            Zero Theorem is where precise software engineering meets visionary graphic design to build foundational solutions.
-          </p>
-        </div>
-        <div ref={ctaRef} className="mt-8 flex flex-col sm:flex-row gap-4">
-          <Button size="lg" asChild className="group relative">
-            <Link href="#portfolio">
-              View Our Work
-              <span className="absolute inset-0 bg-primary-foreground/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-md" />
-            </Link>
-          </Button>
-          <Button size="lg" variant="outline" asChild className="group relative overflow-hidden border-2">
-             <Link href="#cta">
-              Get a Quote
-              <span className="absolute inset-0 border-2 border-primary scale-125 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 rounded-md" />
-            </Link>
-          </Button>
+        <div className="md:bg-background/30 md:backdrop-blur-sm md:border md:border-white/20 md:p-8 md:rounded-2xl md:shadow-lg">
+          <div className="overflow-hidden pb-2">
+            <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold text-foreground py-4">
+              We Solve the Equation of Digital Excellence.
+            </h1>
+          </div>
+          <div className="overflow-hidden">
+            <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-muted-foreground">
+              Zero Theorem is where precise software engineering meets visionary graphic design to build foundational solutions.
+            </p>
+          </div>
+          <div ref={ctaRef} className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" asChild className="group relative">
+              <Link href="#portfolio">
+                View Our Work
+                <span className="absolute inset-0 bg-primary-foreground/10 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-md" />
+              </Link>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="group relative overflow-hidden border-2">
+              <Link href="#cta">
+                Get a Quote
+                <span className="absolute inset-0 border-2 border-primary scale-125 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-300 rounded-md" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
