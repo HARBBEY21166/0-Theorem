@@ -1,12 +1,11 @@
 
 "use client";
 
-import { useRef, useEffect, useState } from 'react';
+import { useRef, useEffect, useState }from 'react';
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from 'lucide-react';
 import { gsap } from 'gsap';
 import Link from 'next/link';
-import Image from 'next/image';
 
 // @ts-ignore
 import type { SplineViewer } from '@splinetool/viewer';
@@ -59,12 +58,12 @@ export default function HeroSection() {
       </div>
       <div className="relative z-10 flex flex-col items-center max-w-4xl px-4">
         <div className="overflow-hidden pb-2">
-          <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold bg-clip-text text-transparent bg-gradient-to-br from-neutral-50 to-neutral-400 py-4">
+          <h1 ref={headlineRef} className="text-5xl md:text-7xl font-headline font-bold md:bg-clip-text md:text-transparent md:bg-gradient-to-br from-neutral-50 to-neutral-400 py-4 text-foreground">
             We Solve the Equation of Digital Excellence.
           </h1>
         </div>
         <div className="overflow-hidden">
-          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-white">
+          <p ref={subheadlineRef} className="mt-4 text-lg md:text-xl max-w-2xl text-neutral-200 dark:text-neutral-200">
             Zero Theorem is where precise software engineering meets visionary graphic design to build foundational solutions.
           </p>
         </div>
