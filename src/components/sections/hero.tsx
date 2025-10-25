@@ -62,7 +62,7 @@ export default function HeroSection() {
         <div className="overflow-hidden pb-2">
            <h1
             ref={headlineRef}
-            className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground md:text-transparent md:text-stroke-primary dark:md:text-white dark:md:text-stroke-none"
+            className="text-5xl md:text-7xl font-headline font-bold py-4 text-foreground md:text-white"
           >
             We Solve the Equation of Digital Excellence.
           </h1>
