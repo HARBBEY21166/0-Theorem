@@ -77,7 +77,7 @@ You're all set! Start the development server with:
 npm run dev
 ```
 
-Open [http://localhost:9002](http://localhost:3000) in your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
 ---
 
