@@ -1,12 +1,14 @@
+
 "use client";
 
 import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Link from 'next/link';
+import { Button } from '../ui/button';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,19 +17,19 @@ const projects = [
     id: "portfolio-1",
     title: "Project Alpha",
     category: "Web Application",
-    href: "#"
+    href: "/portfolio"
   },
   {
     id: "portfolio-2",
     title: "Project Beta",
     category: "UI/UX Design",
-    href: "#"
+    href: "/portfolio"
   },
   {
     id: "portfolio-3",
     title: "Project Gamma",
     category: "Mobile App",
-    href: "#"
+    href: "/portfolio"
   },
 ];
 
@@ -91,6 +93,14 @@ export default function Portfolio() {
               </div>
             );
           })}
+        </div>
+        <div className="mt-16 text-center">
+            <Button asChild size="lg" variant="outline" className="group">
+                <Link href="/portfolio">
+                    View All Work
+                    <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+            </Button>
         </div>
       </div>
     </section>
