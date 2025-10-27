@@ -45,7 +45,7 @@ export default function Header() {
         const timer = setTimeout(() => setShowLoader(false), 500);
         return () => clearTimeout(timer);
     }
-  }, [isPending]);
+  }, [isPending, pathname]);
 
 
   return (
@@ -67,7 +67,7 @@ export default function Header() {
         )}>
         <div className="container flex h-14 items-center">
             <div className="mr-auto flex">
-            <Link href="/" className="mr-6 flex items-center space-x-2">
+            <Link href="/" onClick={(e) => handleLinkClick('/', e)} className="mr-6 flex items-center space-x-2">
                 <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={38} height={38} />
                 <span className="font-bold font-headline">Zero Theorem</span>
             </Link>
