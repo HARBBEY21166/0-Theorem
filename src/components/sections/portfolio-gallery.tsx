@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useMemo } from 'react';
@@ -5,8 +6,8 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { AnimatePresence, motion } from 'framer-motion';
-import { X, ArrowLeft, ArrowRight } from 'lucide-react';
-import { srOnly } from 'react-day-picker';
+import { X, ArrowLeft, ArrowRight, Github, ExternalLink } from 'lucide-react';
+import Link from 'next/link';
 
 const allProjects = [
   {
@@ -20,7 +21,9 @@ const allProjects = [
     challenge: "To create a scalable and performant web application for data visualization.",
     solution: "We built a custom solution using Next.js and D3.js, creating an interactive and intuitive dashboard.",
     result: "The new platform increased user engagement by 150% and reduced data processing time by 80%.",
-    testimonial: "Zero Theorem delivered a product that exceeded all our expectations."
+    testimonial: "Zero Theorem delivered a product that exceeded all our expectations.",
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: "portfolio-2",
@@ -33,7 +36,9 @@ const allProjects = [
     challenge: "To redesign a complex enterprise software to be more user-friendly and modern.",
     solution: "Our team conducted extensive user research and created a design system that streamlined the user experience.",
     result: "The redesign led to a 75% reduction in user errors and a 90% satisfaction score.",
-    testimonial: "The team's dedication and attention to detail were phenomenal."
+    testimonial: "The team's dedication and attention to detail were phenomenal.",
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: "portfolio-3",
@@ -46,7 +51,9 @@ const allProjects = [
     challenge: "To create a memorable brand identity for a new startup in a crowded market.",
     solution: "We developed a unique brand strategy, logo, and visual language that resonated with the target audience.",
     result: "The new brand helped the startup secure $2M in seed funding and gain significant market traction.",
-    testimonial: "I was impressed by their streamlined process and constant communication."
+    testimonial: "I was impressed by their streamlined process and constant communication.",
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: "portfolio-4",
@@ -59,7 +66,9 @@ const allProjects = [
     challenge: "To build a high-traffic e-commerce platform with a seamless checkout experience.",
     solution: "We leveraged Shopify's API with a custom Next.js frontend for maximum flexibility and performance.",
     result: "The new site handles 10,000 concurrent users and has a 20% higher conversion rate.",
-    testimonial: "They are not just a vendor, but a true partner in our success."
+    testimonial: "They are not just a vendor, but a true partner in our success.",
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: "portfolio-5",
@@ -72,7 +81,9 @@ const allProjects = [
     challenge: "To design a mobile app for a fitness brand that is both motivating and easy to use.",
     solution: "We used gamification and a clean, minimalist interface to create an engaging user experience.",
     result: "The app achieved 1 million downloads in its first year with a 4.9-star rating.",
-    testimonial: "Their expertise in both design and engineering is unparalleled."
+    testimonial: "Their expertise in both design and engineering is unparalleled.",
+    githubUrl: "#",
+    liveUrl: "#",
   },
   {
     id: "portfolio-6",
@@ -85,7 +96,9 @@ const allProjects = [
     challenge: "To rebrand a legacy company to appeal to a younger demographic.",
     solution: "We created a bold, modern brand identity with a vibrant color palette and a fresh tone of voice.",
     result: "The rebrand led to a 300% increase in social media engagement from the target demographic.",
-    testimonial: "They truly understood our vision and brought it to life with incredible skill."
+    testimonial: "They truly understood our vision and brought it to life with incredible skill.",
+    githubUrl: "#",
+    liveUrl: "#",
   },
 ];
 
@@ -209,6 +222,17 @@ export default function PortfolioGallery() {
                                 <h2 className="text-3xl font-headline font-bold text-primary">{selectedProject.title}</h2>
                                 <p className="text-sm text-muted-foreground mt-1">{selectedProject.category}</p>
 
+                                <div className="flex items-center gap-4 mt-4">
+                                    <Link href={selectedProject.githubUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                        <Github className="w-6 h-6" />
+                                        <span className="sr-only">GitHub</span>
+                                    </Link>
+                                    <Link href={selectedProject.liveUrl} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
+                                        <ExternalLink className="w-6 h-6" />
+                                        <span className="sr-only">Live Site</span>
+                                    </Link>
+                                </div>
+
                                 <div className="mt-8 space-y-6 text-foreground/90">
                                     <div>
                                         <h3 className="font-bold font-headline text-lg">The Challenge</h3>
@@ -246,3 +270,5 @@ export default function PortfolioGallery() {
     </section>
   );
 }
+
+    
