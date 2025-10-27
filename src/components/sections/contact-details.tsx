@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Mail, Calendar, Github, Dribbble, Linkedin } from 'lucide-react';
+import { Mail, Calendar, Github, Instagram, Linkedin } from 'lucide-react';
+
 import Link from 'next/link';
 
 const contactLinks = [
@@ -21,18 +22,18 @@ const contactLinks = [
 const socialLinks = [
     {
         icon: <Github className="w-6 h-6" />,
-        label: "GitHub",
+        label: "https://github.com/HARBBEY21166",
         href: "#",
     },
     {
-        icon: <Dribbble className="w-6 h-6" />,
-        label: "Dribbble",
-        href: "#",
+        icon: <Instagram className="w-6 h-6" />,
+        label: "Instagram",
+        href: "https://www.instagram.com/zero.theorem?igsh=MTZpaHV0M2s0czEx",
     },
     {
         icon: <Linkedin className="w-6 h-6" />,
         label: "LinkedIn",
-        href: "#",
+        href: "https://www.linkedin.com/in/abbey0/",
     },
 ]
 
