@@ -1,5 +1,12 @@
+
 import ContactDetails from '@/components/sections/contact-details';
 import ContactForm from '@/components/sections/contact-form';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact Us',
+  description: "Let's build the future, together. Get in touch with Zero Theorem to discuss your project idea and unlock its potential.",
+};
 
 export default function ContactPage() {
   return (

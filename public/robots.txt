@@ -1,0 +1,12 @@
+
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# Please note: In order to be able to use a crawl-delay, you have to
+#             specify the user-agent(s) that it has to apply to.
+#             Also, crawl-delay is not an official standard, but is
+#             supported by several major search engines.
+
+User-agent: *
+Disallow: /cdn-cgi/
+
+Sitemap: https://zerotheorem.com/sitemap.xml
