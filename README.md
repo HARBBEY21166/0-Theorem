@@ -1,9 +1,8 @@
-
 # 🚀 Zero Theorem - Next.js Portfolio & Agency Template
 
 ![Zero Theorem](https://i.pinimg.com/1200x/78/a6/97/78a6977314662fe64f69898c4055c722.jpg)
 
-Welcome to **Zero Theorem!** This is a beautifully designed, production-ready starter template for modern digital agencies, studios, and freelancers. It's built with the best of the modern web: **Next.js, TypeScript, Tailwind CSS, and ShadCN UI**, and brought to life with silky-smooth animations powered by **GSAP** and immersive 3D visuals from **Spline**.
+Welcome to **Zero Theorem!** This is a beautifully designed, production-ready starter template for modern digital agencies, studios, and freelancers. It's built with the best of the modern web: **Next.js, TypeScript, Tailwind CSS, and ShadCN UI**, and brought to life with silky-smooth animations powered by **GSAP**.
 
 We've poured our passion for clean code and elegant design into this project, and we're thrilled to share it with the community. Our goal is to give you a massive head-start in building a stunning, high-performance website.
 
@@ -11,8 +10,7 @@ We've poured our passion for clean code and elegant design into this project, an
 
 ## ✨ Core Features
 
--   **Stunning Animations**: Fluid, professional animations using GSAP and Framer Motion that engage and delight users.
--   **3D Hero Section**: An interactive hero section powered by Spline for a truly memorable first impression.
+-   **Stunning Animations**: Fluid, professional animations using GSAP that engage and delight users.
 -   **Fully Responsive**: Meticulously crafted to look and work beautifully on all devices, from mobile phones to 4K displays.
 -   **Component-Based Architecture**: Built with reusable and customizable React components.
 -   **Dynamic Content**: Easily update services, portfolio items, testimonials, and blog posts.
@@ -28,8 +26,7 @@ We've poured our passion for clean code and elegant design into this project, an
 -   **Language**: [TypeScript](https://www.typescriptlang.org/)
 -   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
 -   **UI Components**: [ShadCN UI](https://ui.shadcn.com/)
--   **Animations**: [GSAP](https://gsap.com/) & [Framer Motion](https://www.framer.com/motion/)
--   **3D Graphics**: [Spline](https://spline.design/)
+-   **Animations**: [GSAP](https://gsap.com/)
 -   **Form Handling**: [React Hook Form](https://react-hook-form.com/) & [Zod](https://zod.dev/)
 -   **Icons**: [Lucide React](https://lucide.dev/)
 
@@ -77,7 +74,7 @@ You're all set! Start the development server with:
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:9002](http://localhost:3000) in your browser to see the result. You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
 
 ---
 
@@ -111,7 +108,6 @@ We built Zero Theorem to be a community-driven project, and we welcome contribut
 ## 🎯 What's Next?
 
 - Customize the content in the component files to make it your own
-- Replace the Spline scene with your own 3D design
 - Update the color scheme in `tailwind.config.ts`
 - Deploy to Vercel with one click: [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new)
 
