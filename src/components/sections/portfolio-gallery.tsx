@@ -211,12 +211,12 @@ export default function PortfolioGallery() {
                           </DialogDescription>
                         </DialogHeader>
                         <div className="grid grid-cols-1 md:grid-cols-2 max-h-[90vh]">
-                            <div className="relative h-[300px] md:h-auto">
+                            <div className="relative h-[300px] md:h-auto bg-black">
                                 <Image
                                     src={selectedProject.imageUrl}
                                     alt={selectedProject.title}
                                     fill
-                                    className="object-cover"
+                                    className="object-contain"
                                 />
                             </div>
                             <div className="p-8 md:p-12 overflow-y-auto">
