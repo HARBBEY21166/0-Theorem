@@ -100,6 +100,7 @@ const allProjects = [
     githubUrl: "#",
     liveUrl: "#",
   },
+  
 ];
 
 const filters = ["All", "Web Dev", "UI/UX", "Branding"];
