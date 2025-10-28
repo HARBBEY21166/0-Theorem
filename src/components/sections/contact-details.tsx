@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { Mail, Calendar, Github, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Calendar, Github, Twitter, Dribbble, Linkedin } from 'lucide-react';
 
 import Link from 'next/link';
 
@@ -20,21 +20,10 @@ const contactLinks = [
 ];
 
 const socialLinks = [
-    {
-        icon: <Github className="w-6 h-6" />,
-        label: "https://github.com/HARBBEY21166",
-        href: "#",
-    },
-    {
-        icon: <Instagram className="w-6 h-6" />,
-        label: "Instagram",
-        href: "https://www.instagram.com/zero.theorem?igsh=MTZpaHV0M2s0czEx",
-    },
-    {
-        icon: <Linkedin className="w-6 h-6" />,
-        label: "LinkedIn",
-        href: "https://www.linkedin.com/in/abbey0/",
-    },
+    { label: "GitHub", icon: <Github className="w-8 h-8" />, href: "https://github.com/HARBBEY21166" },
+    { label: "Twitter", icon: <Twitter className="w-8 h-8" />, href: "https://x.com/ZeroTheorem01?t=GaBiYlmbrPNi9tkTmm1l_Q&s=09" },
+    { label: "LinkedIn", icon: <Linkedin className="w-8 h-8" />, href: "https://www.linkedin.com/in/abbey0" },
+    { label: "Dribbble", icon: <Dribbble className="w-8 h-8" />, href: "https://dribbble.com/abbey0" },
 ]
 
 export default function ContactDetails() {

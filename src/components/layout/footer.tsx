@@ -10,10 +10,10 @@ const navLinks = [
 ];
 
 const socialLinks = [
-  { icon: <Github className="w-5 h-5" />, href: "#" },
-  { icon: <Twitter className="w-5 h-5" />, href: "#" },
-  { icon: <Linkedin className="w-5 h-5" />, href: "#" },
-  { icon: <Dribbble className="w-5 h-5" />, href: "#" },
+  { icon: <Github className="w-8 h-8" />, href: "https://github.com/HARBBEY21166" },
+  { icon: <Twitter className="w-8 h-8" />, href: "https://x.com/ZeroTheorem01?t=GaBiYlmbrPNi9tkTmm1l_Q&s=09" },
+  { icon: <Linkedin className="w-8 h-8" />, href: "https://www.linkedin.com/in/abbey0" },
+  { icon: <Dribbble className="w-8 h-8" />, href: "https://dribbble.com/abbey0" },
 ];
 
 export default function Footer() {
@@ -26,10 +26,10 @@ export default function Footer() {
           {/* Logo and Brand */}
           <div className="flex flex-col items-center md:items-start">
             <Link href="/" className="flex items-center space-x-2">
-              <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={38} height={38} />
-              <span className="font-bold font-headline text-lg">Zero Theorem</span>
+              <Image src="/zero-theorem-blue.svg" alt="Zero Theorem Logo" width={70} height={70} />
+              <span className="font-bold font-headline text-4xl">Zero Theorem</span>
             </Link>
-            <p className="text-muted-foreground text-sm mt-2 text-center md:text-left">
+            <p className="text-muted-foreground text-lg mt-2 text-center md:text-left">
               Solving the equation of digital excellence.
             </p>
           </div>
@@ -37,10 +37,10 @@ export default function Footer() {
           {/* Navigation Links */}
           <div className="flex justify-center">
             <div className="flex flex-col items-center">
-              <h3 className="font-headline font-semibold mb-4">Explore</h3>
+              <h3 className="font-headline font-semibold mb-4 text-4xl">Explore</h3>
               <ul className="space-y-2">
                 {navLinks.map(link => (
-                  <li key={link.href} className="text-center">
+                  <li key={link.href} className="text-center text-lg">
                     <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                       {link.label}
                     </Link>
@@ -52,7 +52,7 @@ export default function Footer() {
 
           {/* Social Links */}
           <div className="flex flex-col items-center md:items-end">
-            <h3 className="font-headline font-semibold mb-4">Connect</h3>
+            <h3 className="font-headline font-semibold mb-4 text-4xl">Connect</h3>
             <div className="flex space-x-4">
               {socialLinks.map((link, index) => (
                 <Link key={index} href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
