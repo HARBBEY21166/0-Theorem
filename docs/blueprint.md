@@ -16,7 +16,7 @@
 - Surface: Lighter Card Background (#161622) is used for surface elements to provide contrast while staying within a dark scheme.
 - Primary: Electric Blue (#4361EE) serves as the primary color, lending vibrancy and energy, reflecting digital focus. The color will have good contrast in the chosen dark color scheme.
 - Secondary: Neon Cyan (#4CC9F0) is employed for accents and hover states to create engaging interactive elements.
-- Accent: Magenta (#F72585) is reserved for special highlights, creating memorable pops of color.
+- Accent: Magenta (#4361EE) is reserved for special highlights, creating memorable pops of color.
 - Text: Off-White (#F1F5F9) ensures excellent readability against the dark background while maintaining a soft, modern feel.
 - Headlines: 'Poppins' (geometric sans-serif) for bold headlines that align to a contemporary style.
 - Body: 'Inter' (sans-serif) for clean, highly readable body text, perfect for detailed descriptions.
